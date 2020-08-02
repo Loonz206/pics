@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import SearchBar from "./SearchBar";
 import axios from 'axios';
+import SearchBar from "./SearchBar";
+import ImageList from './ImageList';
 const accessKey = process.env.REACT_APP_ACCESS_KEY;
 class App extends Component {
   constructor() {
@@ -33,7 +34,7 @@ class App extends Component {
         }}
       >
         <SearchBar onSubmit={this.onSearchSubmit} />
-        Found: {this.state.images.length} images!
+        <ImageList images={this.state.images} />
       </div>
     );
   }
